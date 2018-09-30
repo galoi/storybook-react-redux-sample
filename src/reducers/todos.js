@@ -1,10 +1,13 @@
-const initialState = [
-  {
-    id: 1,
-    text: "hogehoge",
-    completed: true
-  }
-];
+const initialState =
+  process.env.NODE_ENV === "storybook"
+    ? [
+        {
+          id: 1,
+          text: "hogehoge",
+          completed: true
+        }
+      ]
+    : [];
 
 const todos = (state = initialState, action) => {
   switch (action.type) {
